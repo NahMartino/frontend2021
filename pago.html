@@ -1,0 +1,164 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda online de juegos de mesa, rol y accesorios. Novedades, clasicos y ediciones limitadas. Envio a domicilio y retiro en sucursal.">
+    <meta name="keywords" content="Juegos, Rol, Boardgames, Wargames, Dados, Geek, Hobby, Libros, Miniaturas, Dungeons & Dragons, d&d, Catan, Gloomhaven">
+    <title>Pago</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+    href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity=
+"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+    crossorigin="anonymous" /></head>
+<body id="pay">
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
+        </nav>
+    </header>
+    <form action="POST" class="container">
+        <div id="shipping_opt" class="form-group form-check">
+            <label for="opt" class="form-check-label"><h3>Entrega</h3></label> <br>
+                <input type="radio" name="opt" value="Envio a Domicilio" id="opt" class="form-check-input" >Envio a Domicilio <br>
+                <input type="radio" name="opt" value="Retiro en sucursal" id="opt" class="form-check-input" >Retiro en sucursal
+        </div>
+        <br>
+        <div id="carry_info" class="form-group">
+            <fieldset>
+                <legend><p>(opcional en caso de envio a Domicilio)</p></legend>
+                <h3>Datos del destinatario</h3>
+                <label for="name_shipping">Nombre</label>
+                    <input type="text" name="name_shipping" class="form-control"><br>
+                <label for="last_shipping">Apellido</label>
+                    <input type="text" name="last_shipping" class="form-control"><br>
+                <label for="phone_shipping">Teléfono</label>
+                    <input type="number" name="phone_shipping" class="form-control"><br>
+            </fieldset>
+            <h3>Domicilio del destinatario</h3>
+            <label for="street_shipping">Calle</label>
+                <input type="text" name="street_shipping" class="form-control"><br>
+            <div class="row">
+                <div class="col">
+                    <label for="number_shipping">Número</label>
+                        <input type="number" name="number_shipping" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="department_shipping">Departamento(opcional)</label>
+                        <input type="text" name="department_shipping" class="form-control"><br>
+                </div>
+            </div>
+            <label for="barrio_shipping">Barrio (opcional)</label>
+                <input type="text" name="barrio_shipping" class="form-control"><br>
+            <label for="city_shipping">Ciudad</label>
+                <input type="text" name="city_shipping" class="form-control"><br>
+            <div class="row">
+                <div class="col">
+                    <label for="cp_shipping">Código Postal</label>
+                        <input type="number" name="cp_shipping" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="province_shipping">Provincia</label>
+                        <input type="text" name="province_shipping" class="form-control"><br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Datos de Facturacion</h3>
+            <label for="country_billing">País</label>
+                <input type="text" name="country_billing" class="form-control" required><br>
+            <label for="dni">DNI o CUIL</label>
+                <input type="number" name="dni" class="form-control" required>
+            <h4>Persona que pagará el pedido</h4>
+            <label for="name_billing">Nombre</label>
+                <input type="text" name="name_billing" class="form-control" required><br>
+            <label for="last_billing">Apellido</label>
+                <input type="text" name="last_billing" class="form-control" required><br>
+            <label for="phone_billing">Teléfono</label>s
+                <input type="number" name="phone_billing" class="form-control" required><br>
+            <h4>Domicilio de la persona que pagará el pedido</h4>
+            <label for="street_billing">Calle</label>
+                <input type="text" name="street_billing" class="form-control"><br>
+            <div class="row">
+                <div class="col">
+                    <label for="number_billing">Número</label>
+                        <input type="number" name="number_billing" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="department_billing">Departamento(opcional)</label>
+                        <input type="text" name="department_billing" class="form-control"><br>
+                </div>
+            </div>
+            <label for="barrio_billing">Barrio (opcional)</label>
+                <input type="text" name="barrio_billing" class="form-control"><br>
+            <label for="city_billing">Ciudad</label>
+                <input type="text" name="city_billing" class="form-control"><br>
+            <div class="row">
+                <div class="col">
+                    <label for="cp_billing">Código Postal</label>
+                        <input type="number" name="cp_billing" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="province_billing">Provincia</label>
+                        <input type="text" name="province_billing" class="form-control"><br>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <button class="btn btn-primary me-md-2" type="submit" id="ver">Enviar</button>
+                <button class="btn btn-primary" type="reset" id="ver">Reiniciar</button>
+            </div>
+        </div>
+    </form>
+    <aside>
+        <table>
+            <tr>
+                <td><img src="" alt=""></td>
+                <td>Producto</td>
+                <td>x Cantidad</td>
+                <td>Precio</td>
+            </tr>
+            <tr>
+                <td>Subtotal</td>
+                <td></td>
+                <td></td>
+                <td>Precio de los productos</td>
+            </tr>
+            <tr>
+                <td>Costo de envío</td>
+                <td></td>
+                <td></td>
+                <td>Precio</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td>Precio</td>
+            </tr>
+        </table>
+
+
+    </aside>
+
+<script src=
+"https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity=
+"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+    crossorigin="anonymous"></script>
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity=
+"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+    crossorigin="anonymous"></script>
+<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+    integrity=
+"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+    crossorigin="anonymous"></script>
+</body>
+</html>
