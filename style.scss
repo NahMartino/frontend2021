@@ -2,64 +2,58 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
+}
+body{
+    background-color: whitesmoke;
 }
 @mixin sizes ($width,$height) {
     height: $height;
     width: $width;
 }
-$color1:rgba(163,112,0,1);
+$color1:rgb(235, 147, 15);
 $color2:rgba(11,107,15,1);
 $color3: darkred;
 .logoSmall{
-    width: 180px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include sizes(180px, auto);
 }
 nav{
-    background: rgb(163,112,0);
     background: radial-gradient($color2 70%, $color1);
-    @include sizes(100%, 180px);
-    margin-bottom: 30px;
-    padding: 20px;
-    clear: both;
+    @include sizes(100%, auto);
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    justify-items: center;
+    align-items: center;
     ul{
-        float: right;
         display: flex;
         flex-wrap: nowrap;
+        width: 100%;
         align-items: center;
-        margin: 20px;
-        background-color: rgb(255, 255, 255,.2);
+        justify-content: space-between;
+        background-color: rgb(255, 255, 255,.05);
+        font-style: italic;
         li{
             list-style: none;
+            text-decoration: none;
             font-size: 30px;
-            margin: 8px;
+            margin-right: 8px;
             padding: 3px;
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
             a{
                 color: darkorange !important;
+                text-shadow: 2px 2px 3px black;
             }
         }
-        a{
-            img{
-                @include sizes(100px, 100px);
-                background-color: whitesmoke;
-                padding-top: 15px;
-                padding-bottom: 10px;
-                padding-left: 13px;
-                padding-right: 15px;
-            }
+        li:hover{
+            background-color: rgb(255, 255, 255,.8) !important;
         }
     }
     .logoSmall{
-        float: left;
+        width: 50%;
     }
-}
-h1,h2,h3,h4,h5,h6{
-    font-family: 'Roboto';
 }
 h1{
     font-size: 72px;
@@ -67,7 +61,9 @@ h1{
 h2, h4{
     text-align: center;
 }
-
+h1,h2,h3,h4,h5{
+    text-shadow: 1px 1px 1px black;
+}
 footer{
     background: rgb(163,112,0);
     background: radial-gradient($color2 70%, $color1);
@@ -76,7 +72,7 @@ footer{
     display: grid;
     grid-template-columns: 40% 20% 40%;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
 }
 article{
     @include sizes(280px, 320px);
@@ -97,12 +93,8 @@ h2{
 h3,h5{
     color: $color1;
 }
-table, th, td {
+table,tr,th{
     border: 2px solid;   
-}
-th{
-    background-color: brown;
-    color: chartreuse;
 }
 #mediaFooter{
     display: flex;
@@ -110,11 +102,11 @@ th{
     align-items: center;
     flex-wrap: wrap;
     height: 5em;
-    background: linear-gradient(90deg, rgba(11,107,15,1) 11%, white 12%, white 88%, rgba(11,107,15,1) 89%);
-
+    background: linear-gradient(90deg, $color2 5%, white 12%, white 88%, $color2 94%);
+    width: 100%;
     a{
         img{
-            @include sizes(4em, 4em );
+            @include sizes(4em, 4em);
             margin-right: 30px;
         }
     }
@@ -206,8 +198,8 @@ th{
     background-position: center;
     padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    padding-left: 27%;
     h1, p{
         color: white;
         text-align: center;
@@ -280,6 +272,22 @@ th{
         display: block;
     }
 }
+#data{
+    margin-left: 5%;
+    margin-right: 5%;
+    tr{
+        th,td{
+            text-align: center;
+            padding: 5px;
+            border: 2px solid;
+        }
+        th{
+            font-size: 20px;
+            background-color: $color2;
+            color: $color1;
+        }
+    }
+}
 #imgPrincipal{
     width: 600px;
     height: 600px;
@@ -315,11 +323,10 @@ th{
     }
 }
 #compra{
-    font-family: 'Roboto';
     position: fixed;
     right: 10;
     table{
-        td{
+        td,th{
             padding: 5px;
             text-align: center;
         }
@@ -365,7 +372,6 @@ th{
     grid-template-columns:40% 40%;
     padding-left: 10%;
     align-items: center;
-    font-family: 'Roboto';
 }
 #map{
     width: 100%;
@@ -435,15 +441,21 @@ th{
         display: flex;
         align-items: center;
     }
-    .nav a img{
-        height: 60px;
-        width: 60px;
-    }
 }
 
 @media only screen and (max-width: 1100px) {
-    nav .logoSmall{
-        display: none;
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        ul{
+            justify-content: space-evenly;
+        }
+        .logoSmall{
+            display: none;
+        }
+    }
+    #title{
+        padding-left: 10%;
     }
     #mediaFooter a i{
         align-items: center;
@@ -473,13 +485,11 @@ th{
 }
 
 @media only screen and (max-width: 860px){
-    .logoSmall{
-        width: 100px;
-    }
-    footer .logoSmall{
-        width: 120px;
-    }
-    nav{
-        height: 120px;
+    footer{
+        display: grid;
+        grid-template-columns: 50% 50%; 
+        .logoSmall{
+            display: none;
+        }
     }
 }

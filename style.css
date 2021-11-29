@@ -2,37 +2,42 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+body {
+  background-color: whitesmoke;
 }
 
 .logoSmall {
-  width: 180px;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 180px;
 }
 
 nav {
-  background: #a37000;
-  background: radial-gradient(#0b6b0f 70%, #a37000);
-  height: 180px;
+  background: radial-gradient(#0b6b0f 70%, #eb930f);
+  height: auto;
   width: 100%;
-  margin-bottom: 30px;
-  padding: 20px;
-  clear: both;
+  margin-bottom: 5px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  justify-items: center;
+  align-items: center;
 }
 nav ul {
-  float: right;
   display: flex;
   flex-wrap: nowrap;
+  width: 100%;
   align-items: center;
-  margin: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-style: italic;
 }
 nav ul li {
   list-style: none;
+  text-decoration: none;
   font-size: 30px;
-  margin: 8px;
+  margin-right: 8px;
   padding: 3px;
   display: flex;
   flex-wrap: nowrap;
@@ -40,22 +45,13 @@ nav ul li {
 }
 nav ul li a {
   color: darkorange !important;
+  text-shadow: 2px 2px 3px black;
 }
-nav ul a img {
-  height: 100px;
-  width: 100px;
-  background-color: whitesmoke;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  padding-left: 13px;
-  padding-right: 15px;
+nav ul li:hover {
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }
 nav .logoSmall {
-  float: left;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto";
+  width: 50%;
 }
 
 h1 {
@@ -66,15 +62,19 @@ h2, h4 {
   text-align: center;
 }
 
+h1, h2, h3, h4, h5 {
+  text-shadow: 1px 1px 1px black;
+}
+
 footer {
   background: #a37000;
-  background: radial-gradient(#0b6b0f 70%, #a37000);
+  background: radial-gradient(#0b6b0f 70%, #eb930f);
   padding: 20px;
   clear: both;
   display: grid;
   grid-template-columns: 40% 20% 40%;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 }
 
 article {
@@ -98,16 +98,11 @@ h2 {
 }
 
 h3, h5 {
-  color: #a37000;
+  color: #eb930f;
 }
 
-table, th, td {
+table, tr, th {
   border: 2px solid;
-}
-
-th {
-  background-color: brown;
-  color: chartreuse;
 }
 
 #mediaFooter {
@@ -116,7 +111,8 @@ th {
   align-items: center;
   flex-wrap: wrap;
   height: 5em;
-  background: linear-gradient(90deg, #0b6b0f 11%, white 12%, white 88%, #0b6b0f 89%);
+  background: linear-gradient(90deg, #0b6b0f 5%, white 12%, white 88%, #0b6b0f 94%);
+  width: 100%;
 }
 #mediaFooter a img {
   height: 4em;
@@ -214,8 +210,8 @@ th {
   background-position: center;
   padding: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  padding-left: 27%;
 }
 #title h1, #title p {
   color: white;
@@ -290,6 +286,21 @@ th {
   display: block;
 }
 
+#data {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#data tr th, #data tr td {
+  text-align: center;
+  padding: 5px;
+  border: 2px solid;
+}
+#data tr th {
+  font-size: 20px;
+  background-color: #0b6b0f;
+  color: #eb930f;
+}
+
 #imgPrincipal {
   width: 600px;
   height: 600px;
@@ -328,11 +339,10 @@ th {
 }
 
 #compra {
-  font-family: "Roboto";
   position: fixed;
   right: 10;
 }
-#compra table td {
+#compra table td, #compra table th {
   padding: 5px;
   text-align: center;
 }
@@ -380,7 +390,6 @@ th {
   grid-template-columns: 40% 40%;
   padding-left: 10%;
   align-items: center;
-  font-family: "Roboto";
 }
 
 #map {
@@ -390,7 +399,7 @@ th {
 
 #contact {
   text-align: center;
-  border-bottom: 2px solid #a37000;
+  border-bottom: 2px solid #eb930f;
 }
 #contact p {
   font-size: 20px;
@@ -460,15 +469,21 @@ th {
     display: flex;
     align-items: center;
   }
-
-  .nav a img {
-    height: 60px;
-    width: 60px;
-  }
 }
 @media only screen and (max-width: 1100px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  nav ul {
+    justify-content: space-evenly;
+  }
   nav .logoSmall {
     display: none;
+  }
+
+  #title {
+    padding-left: 10%;
   }
 
   #mediaFooter a i {
@@ -500,16 +515,12 @@ th {
   }
 }
 @media only screen and (max-width: 860px) {
-  .logoSmall {
-    width: 100px;
+  footer {
+    display: grid;
+    grid-template-columns: 50% 50%;
   }
-
   footer .logoSmall {
-    width: 120px;
-  }
-
-  nav {
-    height: 120px;
+    display: none;
   }
 }
 
