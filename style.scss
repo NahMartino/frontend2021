@@ -5,18 +5,16 @@
     font-family: 'Roboto';
 }
 body{
-    background-color: whitesmoke;
+    background-color: rgb(27, 92, 136,0.1)!important; 
 }
 @mixin sizes ($width,$height) {
     height: $height;
     width: $width;
 }
-$color1:rgb(235, 147, 15);
-$color2:rgba(11,107,15,1);
+@import url('https://css.gg/facebook.css');
+$color1:#EEA900;
+$color2: #23A0BF;
 $color3: darkred;
-.logoSmall{
-    @include sizes(180px, auto);
-}
 nav{
     background: radial-gradient($color2 70%, $color1);
     @include sizes(100%, auto);
@@ -51,9 +49,12 @@ nav{
             background-color: rgb(255, 255, 255,.8) !important;
         }
     }
-    .logoSmall{
-        width: 50%;
-    }
+}
+.logoSmall{
+    width: 80%;
+}
+#logoPago{
+    width: 15%;
 }
 h1{
     font-size: 72px;
@@ -61,7 +62,7 @@ h1{
 h2, h4{
     text-align: center;
 }
-h1,h2,h3,h4,h5{
+h1,h3,h4,h5{
     text-shadow: 1px 1px 1px black;
 }
 footer{
@@ -73,22 +74,34 @@ footer{
     grid-template-columns: 40% 20% 40%;
     align-items: center;
     justify-items: center;
+    margin-top: 20px;
+    .logoSmall{
+        @include sizes(70%,auto)
+    }
 }
 article{
-    @include sizes(280px, 320px);
+    @include sizes(300px, auto);
     padding: 20px;
-    border: solid black 1px;
     margin-bottom: 30px;
     text-align: center;
     h3, h5{
-        margin: 5px;
+        margin: 10px;
     }
 }
 article a img:hover,#categorias a img:hover,.logoSmall:hover,ul a img:hover{
     transform: scale(1.05);
 }
 h2{
-    color: $color3;
+    color: $color1;
+    -moz-text-stroke-width:1px;
+    -webkit-text-stroke-width: 1px;
+    -moz-text-stroke-color: rgb(0,0,0,0.2);
+    -webkit-text-stroke-color:rgb(0,0,0,0.2);
+    text-shadow: 2px 2px $color3;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 45px;
+    margin-top: 20px;
 }
 h3,h5{
     color: $color1;
@@ -96,40 +109,6 @@ h3,h5{
 table,tr,th{
     border: 2px solid;   
 }
-#mediaFooter{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 5em;
-    background: linear-gradient(90deg, $color2 5%, white 12%, white 88%, $color2 94%);
-    width: 100%;
-    a{
-        img{
-            @include sizes(4em, 4em);
-            margin-right: 30px;
-        }
-    }
-}
-#carro{
-    color: black;
-}
-#facebook{
-    color: #3b5998;;
-}
-#twitter{
-    color: #00acee;
-}
-#github{
-    color: black;
-}
-#instagram{
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    }
 #contenedorProducto{
     display: flex;
     justify-content: space-around;
@@ -167,7 +146,7 @@ table,tr,th{
         align-items: center;
         color: whitesmoke;
         height: 100%;
-        font-size: 1.2em;
+        font-size: 1em;
         border-bottom: orange solid 3px;
     }
     .telefono{
@@ -192,50 +171,80 @@ table,tr,th{
 }
 
 #title{
-    background-image: url(/images/fondo.jpg);
+    background-image: url(images/fondo.jpg);
     background-repeat:no-repeat;
     background-size: 100%;
     background-position: center;
-    padding: 20px;
     display: flex;
     justify-content: left;
-    padding-left: 27%;
-    h1, p{
-        color: white;
+    align-items: center;
+    padding-left: 15%;
+    h1{
+        color: $color1;
+        -moz-text-stroke-width:2px;
+        -webkit-text-stroke-width: 2px;
+        -moz-text-stroke-color: #000000;
+        -webkit-text-stroke-color:#000000;
+        text-shadow: 7px 7px $color2;
         text-align: center;
         font-style: italic;
         text-decoration: underline;
-    }
-    h1{
         font-size: 120px;
     }
-    p{
-        font-size: 30px;
-    }
-
+}
+#mediaFooter{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 5em;
+    background: linear-gradient(90deg, $color2 5%, white 12%, white 88%, $color2 94%);
+    width: 100%;
+}
+#carro{
+    color: black;
+}
+#facebook{
+    color: #3b5998;;
+}
+#twitter{
+    color: #00acee;
+}
+#github{
+    color: black;
+}
+#instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 #logoBig{
     @include sizes(auto, 230px);
-    animation-name: mover;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-}
-@keyframes mover{
-    0%{
-
-    }
-    50%{
-        transform: translateX(-40%);
-    }
-
 }
 #categorias{
     width: 86%;
     margin-left: 7%;
     margin-right: 7%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    .textContainer{
+        position: relative;
+        text-align: center;
+        h2{
+            position: absolute;
+            top: 85%;
+            left: 5%;
+            color: $color1;
+            -moz-text-stroke-width:2px;
+            -webkit-text-stroke-width: 2px;
+            text-shadow: 4px 4px $color3;
+            text-align: left;
+            font-style: italic;
+            font-size: 45px;
+        }
+    }
     a{
         img{
             width: 32em;
@@ -253,11 +262,10 @@ table,tr,th{
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-evenly;
 }
 .product img{
-    @include sizes(200px, 200px);
+    @include sizes(220px, 250px);
 }
 #ver{
     background-color: $color2;
@@ -294,7 +302,7 @@ table,tr,th{
     margin: 15px;
     float: right;
 }
-#contenedorProductos{
+#contenedorItems{
     margin-left: 8%;
     margin-right: 8%;
     margin-top: 10px;
@@ -302,7 +310,7 @@ table,tr,th{
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
 }
 .carousel-item img{
@@ -315,6 +323,7 @@ table,tr,th{
 }
 #pay{
     form{
+        margin-left: 3%;
         float: left;
         width: 53%;
     }
@@ -325,6 +334,9 @@ table,tr,th{
 #compra{
     position: fixed;
     right: 10;
+    img{
+        @include sizes(10em,auto )
+    }
     table{
         td,th{
             padding: 5px;
@@ -358,13 +370,14 @@ table,tr,th{
 #catProductos{
     float: right;
     display: flex;
-    width: 70%;
+    width: 75%;
     height: auto;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin-right: 8%;
     clear: both;
+    padding-bottom: 20px;
 }
 /*Contacto*/
 #contactPage{
@@ -441,9 +454,12 @@ table,tr,th{
         display: flex;
         align-items: center;
     }
+    #title{
+        padding-left: 10%;
+    }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1150px) {
     nav {
         display: flex;
         flex-wrap: wrap;
@@ -455,7 +471,13 @@ table,tr,th{
         }
     }
     #title{
-        padding-left: 10%;
+        padding-left: 5%;
+        #logoBig{
+            @include sizes(auto, 120px);
+        }
+        h1{
+            font-size: 80px;
+        }
     }
     #mediaFooter a i{
         align-items: center;
@@ -482,6 +504,19 @@ table,tr,th{
         margin-right: 0;
         clear: both;
     }
+    .telefono,.correo,.direccion{
+        font-size: 0.5em;
+    }
+    #pay{
+        form{
+            margin-left: 2%;
+            width: 50%;
+        }
+        aside{
+            width: 45%;
+            margin-left: 2%;
+        }
+    }
 }
 
 @media only screen and (max-width: 860px){
@@ -490,6 +525,12 @@ table,tr,th{
         grid-template-columns: 50% 50%; 
         .logoSmall{
             display: none;
+        }
+    }
+    #title{
+
+        h1{
+            font-size: 70px;
         }
     }
 }
